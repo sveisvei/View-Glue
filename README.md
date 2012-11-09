@@ -13,22 +13,23 @@ If the code is loaded, it will run right away.
 # Event binding
 
 It will replace:
-    - $(document).ready(bindEvents);
-    - function bindEvents(){
-       - $(".someselector").on('submit',           somemodule.submit)
-       - $(".someselector").on('click', 'element'  somemodule.clickElement)
-       - $(".someselector").on('click',            somemodule.click)
-       - $(".someselector").on('focus',            somemodule.focus)
-       - $(".someselector").on('touchstart',       somemodule.click)
-       - bindEventsModule2();
-    - }
-    - function bindEventsModule2(){
-       - $(".someselector2").on('submit',           somemodule.submit)
-       - $(".someselector2").on('click', 'element'  somemodule.clickElement)
-       - $(".someselector2").on('click',            somemodule.click)
-       - $(".someselector2").on('focus',            somemodule.focus)
-       - $(".someselector2").on('touchstart',       somemodule.click)
-    - }
+    
+    function bindEvents(){
+      $(".someselector").on('submit',           somemodule.submit)
+      $(".someselector").on('click', 'element'  somemodule.clickElement)
+      $(".someselector").on('click',            somemodule.click)
+      $(".someselector").on('focus',            somemodule.focus)
+      $(".someselector").on('touchstart',       somemodule.click)
+      bindEventsModule2();
+    }
+    function bindEventsModule2(){
+      $(".someselector2").on('submit',           somemodule.submit)
+      $(".someselector2").on('click', 'element'  somemodule.clickElement)
+      $(".someselector2").on('click',            somemodule.click)
+      $(".someselector2").on('focus',            somemodule.focus)
+      $(".someselector2").on('touchstart',       somemodule.click)
+    }
+    $(document).ready(bindEvents);
 
 With:
     - VOID JS, except global event delegation
