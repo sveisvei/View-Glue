@@ -59,11 +59,12 @@ Starting to delegate events:
     var glueInstance  = viewGlue.startContext('contextName', $root, 'all', lazySelectors,  defaults);
 
 viewGlue.startContext Arguments:
-    1 String ) context creates an instance, multiple instances can run on same page, but not on same $root element, e.g. multiple widgets on same page
-    2 Jquery-collection ) Root-element ($root)
-    3 String, kommasep ) Event-tags('all', or 'forms,input,history,touch,normal...') to be delegated
-    4 Object ) Selectors to be lazyloaded, and available inside module
-    5 Object ) defaults to be loaded into module
+
+* 1 String ) context creates an instance, multiple instances can run on same page, but not on same $root element, e.g. multiple widgets on same page
+* 2 Jquery-collection ) Root-element ($root)
+* 3 String, kommasep ) Event-tags('all', or 'forms,input,history,touch,normal...') to be delegated
+* 4 Object ) Selectors to be lazyloaded, and available inside module
+* 5 Object ) defaults to be loaded into module
 
 
 #Example 1
