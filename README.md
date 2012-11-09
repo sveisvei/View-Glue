@@ -14,25 +14,30 @@ If the code is loaded, it will run right away.
 
 It will replace:
     
-    function bindEvents(){
-      $(".someselector").on('submit',           somemodule.submit)
-      $(".someselector").on('click', 'element'  somemodule.clickElement)
-      $(".someselector").on('click',            somemodule.click)
-      $(".someselector").on('focus',            somemodule.focus)
-      $(".someselector").on('touchstart',       somemodule.click)
-      bindEventsModule2();
-    }
-    function bindEventsModule2(){
-      $(".someselector2").on('submit',           somemodule.submit)
-      $(".someselector2").on('click', 'element'  somemodule.clickElement)
-      $(".someselector2").on('click',            somemodule.click)
-      $(".someselector2").on('focus',            somemodule.focus)
-      $(".someselector2").on('touchstart',       somemodule.click)
-    }
-    $(document).ready(bindEvents);
+```javascript    
+function bindEvents(){
+  $(".someselector").on('submit',           somemodule.submit)
+  $(".someselector").on('click', 'element'  somemodule.clickElement)
+  $(".someselector").on('click',            somemodule.click)
+  $(".someselector").on('focus',            somemodule.focus)
+  $(".someselector").on('touchstart',       somemodule.click)
+  bindEventsModule2();
+}
+function bindEventsModule2(){
+  $(".someselector2").on('submit',           somemodule.submit)
+  $(".someselector2").on('click', 'element'  somemodule.clickElement)
+  $(".someselector2").on('click',            somemodule.click)
+  $(".someselector2").on('focus',            somemodule.focus)
+  $(".someselector2").on('touchstart',       somemodule.click)
+}
+$(document).ready(bindEvents);
+```
 
 With:
-    - VOID JS, except global event delegation
+```javascript
+//VOID JS, except global event delegation
+viewGlue.startContext(...)
+```    
 
 But instead of setting up js, you will have to mark-it-up:
     - <a href="/some/real/url" data-r="somemodule.show"></a>
@@ -148,8 +153,9 @@ Module "modulename2"
 define([], function(){
     function successHandler(module){
         return function(data){
+            var message = '<p>Takk for at du sendte inn skjema. Bekreftelse er sendt til ' + module.input.email + '</p>';
             // module.$elem is the element that the data-r attributt resides on.
-            module.$elem.replaceWith('<p>Takk for at du sendte inn skjema. Bekreftelse er sendt til ' + module.input.email + '</p>');
+            module.$elem.replaceWith(message);
         }
     }
     /*
