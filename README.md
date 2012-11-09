@@ -35,7 +35,7 @@ $(document).ready(bindEvents);
 
 With:
 ```javascript
-//VOID JS, except global event delegation
+//VOID JS, except global event delegation:
 viewGlue.startContext(...)
 ```    
 
@@ -160,7 +160,8 @@ define([], function(){
     }
     /*
         3) call with selectors and defaults from context, defaults to delegated $root.
-           Forms usually needs to handle input, so the ViewGlue collects the whole form into input object{name: val()} for easy access
+           Forms usually needs to handle input, so the ViewGlue 
+           collects the whole <form> into module.input object{name: val()} for easy access
     */
     function submit(module){
         $.ajax('/remote', module.input).success(successHandler(module));
